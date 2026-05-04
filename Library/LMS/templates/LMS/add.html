@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: whitesmoke; text-align: center;">
+    <h1 style="text-align: center; background: lavender;">ADD_BOOKS</h1>
+
+    <hr>
+
+        {% for message in messages%}
+            <h3>{{ message }}</h3>
+        {% endfor %}
+    
+    
+    <div style="text-align: center; font-size: 25px; margin-top: 40px;">
+    <form method="post">
+        {% csrf_token %}
+
+    Name: <input type="text"  name="name" placeholder="Enter Book Name:"><br><br><br>
+
+    Author: <input type="text" name="author" placeholder="Enter Author Name:"><br><br><br>
+
+    Status: <select name="status">
+        <option value="available" >Available</option>
+        <option value="issued">Issued</option>
+    </select><br><br><br>
+
+    <button type="submit" style="text-align: center; height:30px; width:140px; background-color: lightgrey;">ADD_BOOK</button><br><br><br>
+
+    </form>
+    <a href="{% url 'home' %}">Back to Home Page</a>
+    </div>
+</body>
+</html>

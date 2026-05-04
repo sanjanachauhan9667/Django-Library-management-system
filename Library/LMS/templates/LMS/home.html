@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: ghostwhite;">
+    <h1 style="text-align: center; background-color: bisque;">LIBRARY MANAGEMENT SYSTEM</h1>
+    <hr>
+    <br><br>
+
+    <a href="{% url 'add' %}" style="text-align: center; display: block;"><button type="submit" style="background-color: aquamarine; height: 40px; width:140px;">Add_Book</button></a><br><br>
+
+
+    <a href="{% url 'search' %}" style="text-align: center; display: block;"><button type="submit" style="background-color: aquamarine; height: 40px; width:140px;">Search_Book</button></a><br><br>
+
+    <a href="{% url 'issue' %}" style="text-align: center; display: block;"><button type="submit" style="background-color: aquamarine; height: 40px; width:140px;">Issue_Book</button></a><br><br>
+
+    <a href="{% url 'return' %}" style="text-align: center; display: block;"><button type="submit" style="background-color: aquamarine; height: 40px; width:140px;">Return_Book</button></a><br><br>
+
+    <a href="{% url 'delete' %}" style="text-align: center; display: block;"><button type="submit" style="background-color: aquamarine; height: 40px; width:140px;">Delete_Book</button></a><br><br>
+
+
+</body>
+</html>

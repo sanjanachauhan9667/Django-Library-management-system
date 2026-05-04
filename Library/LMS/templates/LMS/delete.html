@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    
+    <h1 style="text-align: center; background-color: lavender;">DELETE BOOK</h1>
+    <hr>
+    <br><br>
+
+ <div style="text-align: center; font-size: 25px;">
+
+    <form method="post">
+        {% csrf_token %}
+
+    BOOK ID: <input type="number"name="id" placeholder="Enter ID"><br><br>
+
+    <button type="submit" name="action" value="delete" style="text-align: center; background-color: aquamarine; height:30px; width:140px;">DELETE</button><br><br>
+
+    <button type="submit" name="action" value="delete_all" onclick ="return confirm('Are you sure you want to delete All Books?')" style="text-align: center; background-color: aquamarine; height: 30px; width:140px;">DELETE_ALL</button><br>
+
+    </form>
+    <p> {{ message }} </p>
+    
+   </div> 
+<div style="text-align: center;">
+
+    {% if books %}
+    <table border="2" style="margin: auto;">
+        <tr>
+            <th>BooK_id</th>
+            <th>Book_name</th>
+            <th>Book_author</th>
+            <th>Book_status</th>
+        </tr>
+        {% for b in books %}
+        <tr>
+            <td>{{ b.id }}</td>
+            <td>{{ b.name }}</td>
+            <td>{{ b.author }}</td>
+            <td>{{ b.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+</div> <br> <br>
+
+    
+<a href="{% url 'search' %}" style="text-align: center;">Back To Search Page</a><br><br>
+
+<a href="{% url 'home' %}" style="text-align: center;">Back To Home Page</a><br>
+
+
+
+ 
+
+</body>
+</html>
+
+    

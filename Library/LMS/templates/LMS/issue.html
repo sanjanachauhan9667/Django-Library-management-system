@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1 style="text-align: center; background-color: darkkhaki;"> Issue Book </h1>
+    <hr>
+    <br><br><br>
+
+
+    {% if messages %}
+        {% for message in messages %}
+            <h2>{{ message }}</h2>
+        {% endfor %}
+    {% endif %}
+
+    <div style="text-align: center; font-size: 25px;">
+    <form method="post">
+        {% csrf_token %}
+
+    Book Id: <input type="text" name="id" placeholder="Enter Book ID" required><br><br><br>
+
+    <button type="submit" style="text-align: center; background-color: beige; height: 35px; width:140px;">ISSUE BOOK</button> <br><br><br>
+
+    </form>
+
+    <a href="{% url 'home' %}">Back To Home Page</a><br>
+    <a href="{% url 'search' %}">Back To Search Page</a><br>
+    </div>
+
+</body>
+</html>
